@@ -1,8 +1,5 @@
 const tabs = document .getElementById("tabs");
 const content = document.querySelectorAll(".content");
-const tabs_dop=document.getElementById("tabs_dop");
-const contents_dop=document.querySelectorAll('contents_dop')
-
 
 const changeClass=el=>{
     for (let i =0; i< tabs.children.length; i++){
@@ -23,25 +20,28 @@ tabs.addEventListener("click", e=>{
     }
 });
 
+const tabsDop=document.getElementById("tabs_dop");
+const contentsDop=document.querySelectorAll('.content-dop');
 
-
-const changeClassTwo =a=>{
-    for (let i = 0; i < tabs_dop.children.length; i++){
-tabs_dop.children[i].classList.remove('active');
+const changeClassTwo =el=>{
+    for (let i = 0; i < tabsDop.children.length; i++){
+tabsDop.children[i].classList.remove('active');
 
     }
-   a.classList.add("active");
+   el.classList.add("active");
 }
 
-tabs_dop.addEventListener("click", e=>{
-    const currTabTwo = e.target.dataset.btn;
+tabsDop.addEventListener("click", e=>{
+    const currTab = e.target.dataset.btndop;
    changeClassTwo(e.target);
    
- for(let i = 0; i < content.length; i++){
-    content[i].classList.remove("active");
+   
+ for(let i = 0; i < contentsDop.length; i++){
+    contentsDop[i].classList.remove("active");
+    
 
-    if(content [i].dataset.content === currTabTwo) {
-        content [i].classList.add("active");
+    if(contentsDop[i].dataset.contentdop === currTab) {
+        contentsDop[i].classList.add("active");
     }
 }
 })
